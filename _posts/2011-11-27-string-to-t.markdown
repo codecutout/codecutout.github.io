@@ -2,6 +2,7 @@
 layout: post
 title:  "String to Object Parsing"
 date:   2011-11-27
+description: "We have a string and we want to parse it as an object, what to do?"
 ---
 
 ## .NET do it for me
