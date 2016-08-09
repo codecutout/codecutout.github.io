@@ -1,7 +1,7 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: Code Cutout
+description: Scrapbook of a different class
 
-url: http://brianmaierjr.github.com/long-haul
+url: http://codecutout.github.io
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
@@ -20,9 +20,9 @@ navigation:
    url: /contact
 
 social:
-   github: brianmaierjr
-   twitter: brianmaierjr
-   facebook: brianmaierjr
-   email: brimaidesigns@gmail.com
+   github: codecutout
+   #twitter: brianmaierjr
+   #facebook: brianmaierjr
+   email: alex@codecutout.com
 
-google_analytics: "UA-58263416-1"
+google_analytics: "UA-43239606-1"
