@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "LRU Cache"
+date:   2011-12-11
+description: "A simple LRU Cache implementation"
+redirect_from: "/lru-cache"
+---
+
+## The file
+
+[LRUCache.cs][1]
+
+## Sometimes you just want a simple cache
+
+Microsoft did good by moving `System.Web.Caching` to `System.Runtime.Caching` but even their cache puts a lot of work on you to check values are in the cache, add them and remove them. What we need is a simple light weight way of storing and retrieving our 'slow to access' data and to be able to control how much of this data we store in memory.
+
+## LRU, the classic cache
+
+We are looking for a straight forward least recently used cache. That is our cache will only store a fixed number of items and if we go over our fixed number we will remove the oldest item in the cache. Nice and simple, the classic cache.
+
+The usage we want is something like
+
+{% highlight csharp %}
+//create a cache with a specified size, and a delegate that tells the cache how to use
+//a key to go and find the actual data
+var cache = new Cache<string, Person>(1000, key => db.Find(p=>p.ItemID==key));
+
+//now just read values from the cache, it will do the rest, that is it will return
+//the value from memory if its in the cache, otherwise it will go and retrieve it
+//and add it to the cache, removing old values if we have got a full cache
+Person p = cache["jbloggs"];
+
+//we can force a key to invalidate (i.e. we just updated the data and need it refetched)
+cache.Invalidate("jbloggs");
+{% endhighlight %}
+
+There is nothing so different or special about this cache and you will be able to find dozens of similar implementations in the internet, but for some reason there is no default implementation in the .NET framework. For the ease of copying and pasting into projects the whole C# file is reproduced here
+
+<script src="https://gist.github.com/codecutout/7a2cca72a334ab631f205d5b08e84747.js"></script>
+
+The cache is implemented with a dictionary and a linked list. The dictionary allows quick look ups on linked list items and cache values. The linked list allows us to keep track of age, when an item is accessed we move it to the front of the linked list and when we have too many items in our cache we can delete the item at the end of the linked list. All these operations are wrapped up in a `lock` to ensure the threads play nice.
+
+
+## Not all cases are simple
+
+As nice as an LRU cache is, you still need to be aware that it is not the final word on your caching solution. This cache is only in memory and items need to be invalidated by the application to remove them from the cache. This means as soon as you use this cache on frequently changing data on a farmed web server all sorts of bad things will happen as each web server is reading a different cached version of the data. In cases like this you will need to have a look at separate cache server solutions such as Azure App Fabric or memcached 
+
+In the given cache solution it is up to you to invalidate cache items if they get modified, if you miss a place where an item is updated then your application could potentially be stuck with incorrect data until someone restarts the server. It is not a difficult extension to this cache to add timed expiries but as I was going for a simple cache ill leave the extension to you.
+
+
+  [1]: https://gist.github.com/codecutout/7a2cca72a334ab631f205d5b08e84747
