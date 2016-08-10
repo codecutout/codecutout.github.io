@@ -6,7 +6,8 @@
 
 .post .gist{
 	.blob-num{
-		color:inherit;
+		color:#ccc;
+		border: solid #ccc;
 	}
 	.blob-wrapper{
 		max-height:800px;
@@ -28,7 +29,7 @@
 			//these arent exact as items get parsed differently, but its close enough
 			.pl-k{ color: #729fcf; }
 			.pl-en, .pl-n, .pl-s, .pl-smi { color: #C1C2C3; }
-			.pl-c, pl-ent { color: #8D9684; }
+			.pl-c, .pl-ent { color: #8D9684; }
 			.pl-c1 { color: #8ae234; }
 		}
 	}
