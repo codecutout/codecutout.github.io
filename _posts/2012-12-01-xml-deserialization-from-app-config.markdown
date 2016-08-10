@@ -6,7 +6,7 @@ description: "The simpler way to create custom app.config sections"
 redirect_from: "/xml-deserialization-from-app-config"
 ---
 
-##Custom entries into App.Config are hard, if only there was an easer way
+## Custom entries into App.Config are hard, if only there was an easer way
 
 If you have ever tried to make a custom app.config entry it has probably come out of it with a few traumatic memories - it is hard, much harder than it should be.
 
@@ -105,10 +105,11 @@ I can put this in the config file like this
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
+
   <configSections>
-	<!-- Need to use full reference with [namespace].[typename], [assembly] -->
-	<!-- The section name will need to be teh same as the classname for deserialization to work -->
-  <section name="CacheServerConfiguration" type="MyProject.CacheServerConfiguration, MyProject"/>
+    <!-- Need to use full reference with [namespace].[typename], [assembly] -->
+    <!-- The section name will need to be teh same as the classname for deserialization to work -->
+    <section name="CacheServerConfiguration" type="MyProject.CacheServerConfiguration, MyProject"/>
   </configSections>
 
   <CacheServerConfiguration>
@@ -129,7 +130,7 @@ var config = (CacheServerConfiguration)ConfigurationManager.GetSection("CacheSer
 
 Because it uses the XML deserilizer you just need to sprinkle your code with `[XmlAttribute]`, `[XmlRoot]` attributes or implement `IXmlSerializable` to make it look like the XML you want. No more messing around with `ConfigurationElement`s and `[ConfigurationProperty]`
 
-##I'm a changed man
+## I'm a changed man
 
 All my custom configs from here on in will make use of this gem, and i encourage everyone to go to Mark Focas' post [http://www.codeproject.com/Articles/6730/Custom-Objects-From-the-App-Config-file][1] and give him 5 stars for thinking this up.
 
