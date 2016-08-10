@@ -2,7 +2,7 @@
 layout: post
 title:  "One Project File"
 date:   2014-02-16
-description: "We have a string and we want to parse it as an object, what to do?"
+description: "Why have multiple project files in a solution, why not have just one?"
 redirect_from: "/one-project-file"
 ---
 
