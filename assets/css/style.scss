@@ -16,6 +16,9 @@
 // Site configuration
 @import "config"; 
 
+@import "partials/mixins";
+@import "partials/grid";
+
 // Modules
 @import "modules/buttons";
 @import "modules/forms"; 
@@ -24,8 +27,7 @@
 
 // Import Partials
 @import "partials/typography";
-@import "partials/mixins";
-@import "partials/grid";
+
 
 // Mobile up base styles
 @import "breakpoints/mobileup";
