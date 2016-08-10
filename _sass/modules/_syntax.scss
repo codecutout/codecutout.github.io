@@ -4,6 +4,26 @@
   http://sourcey.com
 ***************/
 
+.post .gist{
+	.blob-wrapper{
+		max-height:800px;
+		overflow:auto;
+		background: #343642;
+		
+		table{
+			background-color:transparent;
+			color:white;
+			tr{
+				background-color:transparent;
+				border-bottom:none;
+			}
+			.blob-code-inner{
+				color:#C1C2C3
+			}
+		}
+	}
+}
+
 .highlight {
   white-space: pre; 
   overflow: auto; 
