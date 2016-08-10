@@ -11,18 +11,19 @@ highlighter: rouge
 gems: ["jekyll-paginate", "jekyll-redirect-from"]
 paginate: 5
 
-navigation:
- - title: Home
-   url: /index.html
- - title: About
-   url: /about
- - title: Contact
-   url: /contact
+#navigation:
+# - title: Home
+#   url: /index.html
+# - title: About
+#   url: /about
+# - title: Contact
+#   url: /contact
 
 social:
    github: codecutout
    #twitter: brianmaierjr
    #facebook: brianmaierjr
-   email: alex@codecutout.com
+   #email: alex@codecutout.com
+   linkedin:alex-davies-b6763431
 
 google_analytics: "UA-43239606-1"
