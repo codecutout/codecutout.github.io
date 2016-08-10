@@ -206,4 +206,4 @@ There are loads of other great feature in F# that were not mentioned here, prima
 Now I just need to think of another F# project that can encapsulate the things I missed.
 
 
-  [1]: assets/posts/code/BrainfuckInterpreter/BrainfuckInterpreter.zip
+  [1]: /assets/posts/code/BrainfuckInterpreter/BrainfuckInterpreter.zip
