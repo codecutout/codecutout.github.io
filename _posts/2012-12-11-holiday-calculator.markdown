@@ -590,4 +590,4 @@ In case my example config hasn't given it away the code was originally written t
 
   [2]: https://github.com/codecutout/HolidayCalculator
   [3]: https://github.com/codecutout/HolidayCalculator/blob/master/HolidayCalculator/Schema.xsd
-  [4]: /posts/img/visual-studio-xml-properties.png
+  [4]: /assets/posts/img/visual-studio-xml-properties.png
