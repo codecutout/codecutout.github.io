@@ -126,4 +126,4 @@ public class HomeController : Controller
 {% endhighlight %}
 
   [1]: http://structuremap.net/structuremap/-
-  [2]: /assets/postimages/structure-map-nuget.jpg
+  [2]: /assets/posts/img/structure-map-nuget.jpg
