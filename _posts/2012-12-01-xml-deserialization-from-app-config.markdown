@@ -7,6 +7,7 @@ redirect_from: "/xml-deserialization-from-app-config"
 ---
 
 ##Custom entries into App.Config are hard, if only there was an easer way
+
 If you have ever tried to make a custom app.config entry it has probably come out of it with a few traumatic memories - it is hard, much harder than it should be.
 
 However recently i came across an amazing code project article [http://www.codeproject.com/Articles/6730/Custom-Objects-From-the-App-Config-file][1]. Full credit of this whole post goes to Mark Focas who wrote the original article and code. It shows a far simpler way to write custom config sections.
@@ -17,6 +18,7 @@ I have also made minor tweaks to the original code which I think makes it slight
 
 
 ## Code first, then example
+
 {% highlight csharp %}
 using System;
 using System.Collections.Generic;
@@ -125,8 +127,7 @@ and i can get it out of the config like this
 var config = (CacheServerConfiguration)ConfigurationManager.GetSection("CacheServerConfiguration");
 {% endhighlight %}
 
- Because it uses the XML deserilizer you just need to sprinkle your code with `[XmlAttribute]`, `[XmlRoot]` attributes or implement `IXmlSerializable` to make it look like the XML you want. No more messing around with `ConfigurationElement`s and `[ConfigurationProperty]`
-
+Because it uses the XML deserilizer you just need to sprinkle your code with `[XmlAttribute]`, `[XmlRoot]` attributes or implement `IXmlSerializable` to make it look like the XML you want. No more messing around with `ConfigurationElement`s and `[ConfigurationProperty]`
 
 ##I'm a changed man
 
