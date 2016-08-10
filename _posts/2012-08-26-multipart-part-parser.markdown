@@ -36,7 +36,7 @@ The HTML form
 
 Will send a request to server that looks similar to
 
-{% highlight %}
+{% highlight css %}
 ------WebKitFormBoundaryummUFQApPgTA1WSX
 Content-Disposition: form-data; name="Description"
 
