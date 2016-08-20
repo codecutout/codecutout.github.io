@@ -1,3 +1,5 @@
+repository: codecutout/codecutout.github.io
+
 title: Code Cutout
 description: Scrapbook of a different class
 
@@ -9,7 +11,7 @@ permalink: "blog/:title/"
 markdown: kramdown
 highlighter: rouge
 gems: ["jekyll-paginate", "jekyll-redirect-from"]
-paginate: 5
+paginate: 8
 
 #navigation:
 # - title: Home
@@ -27,3 +29,9 @@ social:
    linkedin: "alex-davies-b6763431"
 
 google_analytics: "UA-43239606-1"
+
+profile:
+  name: "Alex Davies"
+  image: "/assets/img/profile.jpg"
+  description: ["I am Alex Davies, a software engineer and technical tinkerer.", "Whatever I am working with ,whether it be with C#, F#, Node or something else, this is the place where I document my coding ventures and detail my lessons learned.", "If you have any queries or comments you can find me at"]
+

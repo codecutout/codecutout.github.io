@@ -278,6 +278,7 @@ POST STYLING
 	.highlight {
 		clear: both;
 		margin-bottom: 2rem;
+		margin-top:-1rem; //move it closer to the preceding paragraph
 	}
 
 	.dropcap {
@@ -302,7 +303,7 @@ POST NAV STYLING
 
 .postNav {
 	border-top: 1px solid darken(white, 10%);
-	border-bottom: 1px solid darken(white, 10%);
+
 	overflow: hidden;
 
 	.prev, .next {
@@ -379,11 +380,9 @@ FOOTER STYLING
 
 .footer {
 	text-align: center;
-	padding: 2rem 0;
-
+	padding: 1rem 0;
+	background-color: #F3F3F3;
 	.container {
-		border-top: 4px solid darken(white, 15%);
-		padding-top: .5em;
 		@include container(90%);
 	}
 
@@ -439,6 +438,22 @@ FOOTER STYLING
 }
 
 
+.profile{
+	overflow:hidden;
+	img {
+		border-radius: 50%;
+		max-width: 30%;
+	}
+	.profile-description{
+
+		font-size: 0.9em;
+		color: lighten($black, 45%);
+	}
+	p{
+		margin-bottom:1em;
+	}
+}
+
 /***************
 PAGINATION STYLING
 ***************/
@@ -489,7 +504,7 @@ POST LIST STYLING
 		}
 
 		h3 {
-			margin: 0 0 .5em;
+			margin: 0 0 .2em;
 		}
 	}
 }

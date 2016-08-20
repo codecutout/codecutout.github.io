@@ -3,27 +3,9 @@ GLOBAL STYLES
 ***************/
 
 .content {
-	padding-top: 0;
+	padding-top: 1em;
 	position: relative;
 	z-index: 1;
-
-	&:after {
-		z-index: -1; 
-		background: white;
-		content: ""; 
-		display: block;
-		width: 100%;
-		height: 5em;
-		position: absolute;
-		top: -2em;
-		left: 0;
-		-webkit-transform: skewY(-2deg);
-		-ms-transform: skewY(-2deg);
-		transform: skewY(-2deg);
-		-webkit-transform-origin: bottom left;
-		-ms-transform-origin: bottom left;
-		transform-origin: bottom left; 
-	}
 }
 
 .container {
@@ -41,6 +23,7 @@ HOMEPAGE STYLING
 		@include span(9 of 12);
 		float: none;
 		margin: 0 auto 1.5em;
+		overflow: hidden;
 	}
 
 	.pageTitle {
@@ -54,29 +37,53 @@ HEADER STYLING
 ***************/
 
 .header {
-	height: 15em;
+	height: 10em;
 	position: relative;
 	padding-bottom: 2em;
 
-	.container {
-		position: relative;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
-		@include container(800px); 
+	.transition {
+
+		position:absolute;
+		bottom: -5em;
+		left:0;
+		width:100%;
+		-webkit-transform: skewY(-2deg);
+		-ms-transform: skewY(-2deg);
+		transform: skewY(-2deg);
+		-webkit-transform-origin: bottom left;
+		-ms-transform-origin: bottom left;
+		transform-origin: bottom left;
+
+		.container{
+			@include container(800px);
+			h1 {
+				@include span(9 of 12);
+				float: none;
+				margin: 0 auto 1.5em;
+				font-size: 3em;
+				line-height: 1;
+				letter-spacing: -3px;
+				padding-left: 0;
+				margin-bottom: -8px;
+			}
+		}
+
+
+		&:after {
+			z-index: -1;
+			background: white;
+			content: "";
+			display: block;
+			width: 100%;
+			height: 5em;
+			top: -2em;
+			left: 0;
+
+		}
 	}
 
-	h1 {
-		font-size: 3em;
-		line-height: 1;
-		letter-spacing: -3px;
-		padding-left: 0;
-		
-		background-image:url("../img/cutout.png");
-		background-repeat: no-repeat;
-		background-position: center center;
-	}
+
+
 
 	nav {
 		float: left;
@@ -109,6 +116,8 @@ HEADER STYLING
 			}
 		}
 	}
+
+
 }
 
 
@@ -207,8 +216,9 @@ FOOTER STYLES
 ***************/
 
 .footer {
+
 	&-links {
-		float: right;
+		margin:auto;
 	}
 
 	.copy {
@@ -218,6 +228,18 @@ FOOTER STYLES
 	.container {
 		padding: 1rem 0;
 		@include container(800px);
+	}
+
+}
+
+.profile{
+	img {
+		@include span(first 4 of 20);
+		max-width: 100%;
+	}
+	.profile-description{
+		@include span(last 15 of 20);
+		text-align: left;
 	}
 }
 
