@@ -3,7 +3,7 @@ repository: codecutout/codecutout.github.io
 title: Code Cutout
 description: Scrapbook of a different class
 
-url: http://codecutout.github.io
+url: http://www.codecutout.com
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: "blog/:title/"
