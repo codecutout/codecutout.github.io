@@ -7,7 +7,7 @@ description: "Converting a String into an Expression tree is not small task, and
 
 Recently I had to make rich filtering API that had to handle all the typical query fineries of `AND`s, `OR`s, equality, comparisons and functions. Naturally I did what any good developer would do, I went and found a library that did it all for me and moved onto more important things.
 
-But it did make me pause for a bit and consider, how would I implmented that myself, would I be able make a simple compiler to convert a string into a .NET expression tree. This series of posts is me answering that question
+But it did make me pause for a bit and consider, how would I implemented that myself, would I be able make a simple compiler to convert a string into a .NET expression tree. This series of posts is me answering that question
 
 
 Hopefully by the end of of this we can convert some like:
@@ -22,7 +22,7 @@ or with only configuration change convert:
 
 ## The Tokenizer - A less pretentious Lexer
 
-All experts agree the first step to a compiler is a Tokenizer (some of the more sophisticated prefer to call it a Lexer). A Tokenizer has one simple goal, to take in a string 
+All experts agree the first step to a compiler is a Tokenizer (or as the sophisticated call it, a Lexer). A Tokenizer has one simple goal, to take in a string 
 
 {% highlight js %}
 "( 2 + 3 ) * 6"
@@ -37,7 +37,7 @@ and output a list of labeled symbols we'll call Tokens
     "ADD +",
     "NUMBER 3",
     "CLOSEBRACKET )",
-    "MULTIPLEY *",
+    "MULTIPLY *",
     "NUMBER 6",
 ]
 {% endhighlight %}
@@ -229,7 +229,7 @@ And with very minimal code we have a fully functional, and configurable, `Tokeni
 
 ## What is next
 
-As awesome as our tokenizer is, all we have done is converted the problem from "converting a string into an Expressions" to the problem of "converting a list of tokens into an expression". It is small step, but one in the right direction. The larger problem is for our `Parser` to solve, which is what we are going to write in the next post.
+As awesome as our tokenizer is, all we have done is converted the problem from "converting a string into an Expressions" to the problem of "converting a list of tokens into an expression". It is small step, but one in the right direction. The larger problem is for our `Parser` to solve, which is what we are going to write in the [next post](/string-to-expression-part-2-the-way-of-the-parser/).
 
 
 ## Full code
