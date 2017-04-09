@@ -10,28 +10,25 @@ Recently I had to make rich filtering API that had to handle all the typical que
 But it did make me pause for a bit and consider, how would I implmented that myself, would I be able make a simple compiler to convert a string into a .NET expression tree. This series of posts is me answering that question
 
 
-Hopefull by the end of of this we can convert some like
+Hopefully by the end of of this we can convert some like:
 
-`"( 2 + 3 ) * 6 + 2"` into an `Exprssion<Func<int>>`
+`"( 2 + 3 ) * 6 + 2"` into an `Expression<Func<int>>`
 
 
-or with only configuration chagne convert
+or with only configuration change convert:
 
 
 `"birthdate > 1987-02-19 and Name = 'Henry'"` into an `Expression<Func<Person,bool>>`
 
-
-
-
 ## The Tokenizer - A less pretentious Lexer
 
-All experts agree the first step to a compiler is a Tokenizer (some of the more sophiscated prefer to call it a Lexer). A Tokenizer has one simple goal, to take in a string 
+All experts agree the first step to a compiler is a Tokenizer (some of the more sophisticated prefer to call it a Lexer). A Tokenizer has one simple goal, to take in a string 
 
 {% highlight js %}
 "( 2 + 3 ) * 6"
 {% endhighlight %}
 
-and output a list of labelled symbols we'll call Tokens
+and output a list of labeled symbols we'll call Tokens
 
 {% highlight js %}
 [
@@ -91,7 +88,7 @@ public class TokenDefinition
 
 {% highlight csharp %}
 /// <summary>
-/// An indivdual piece of the complete input
+/// An individual piece of the complete input
 /// </summary>
 public class Token
 {
@@ -224,7 +221,7 @@ public IEnumerable<Token> Tokenize(string text)
 ...
 {% endhighlight %}
 
-You may have also noted we add an ignore flag on our tokens so we can remove annoying things such as whitespace during tokenization. Ignored tokens are matched but never returend. 
+You may have also noted we add an ignore flag on our tokens so we can remove annoying things such as whitespace during tokenization. Ignored tokens are matched but never returned. 
 
 Also if you follow the logic you'll see in the odd case where multiple TokenDefinitions match the same token we just take the first TokenDefinition's match. This does mean that order of your `TokenDefinition`s matter, so you will need to define the more specific definitions before the broader ones. 
 
@@ -232,7 +229,7 @@ And with very minimal code we have a fully functional, and configurable, `Tokeni
 
 ## What is next
 
-As awesome as our tokenizer is, all we have done is converted the problem from "converting a string into an Exprsesions" to the problem of "converting a list of tokens into an expression". It is small step, but one in the right direction. The larger problem is for our `Parser` to solve, which is what we are going to write in the next post.
+As awesome as our tokenizer is, all we have done is converted the problem from "converting a string into an Expressions" to the problem of "converting a list of tokens into an expression". It is small step, but one in the right direction. The larger problem is for our `Parser` to solve, which is what we are going to write in the next post.
 
 
 ## Full code
